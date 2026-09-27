@@ -95,7 +95,16 @@ header {
   .hero { background-position: 72% center; }
 }
 .hero-text { max-width: 55%; padding-left: 22pt; position: relative; z-index: 1; }
-@media (max-width: 860px) { .hero-text { max-width: 100%; padding: 0 24px; } }
+@media (max-width: 860px) {
+  .hero-text { max-width: 100%; padding: 0 24px; }
+}
+@media (max-width: 640px) {
+  /* лёгкое затемнение фото — только на телефонах, чтобы текст читался */
+  .hero::before {
+    height: 100%;
+    background: linear-gradient(180deg, rgba(15, 31, 77, .80), rgba(15, 31, 77, .45) 45%, rgba(15, 31, 77, .70));
+  }
+}
 .hero h1 { font-size: clamp(32px, 5.2vw, 52px); line-height: 1.16; margin-bottom: 18px; }
 .hero h1 em { font-style: italic; color: var(--accent-light); }
 .hero .sub { color: var(--muted); font-size: 17px; max-width: 480px; margin-bottom: 30px; }
@@ -238,6 +247,40 @@ footer a:hover { color: var(--accent-light); }
 .cookie-bar[hidden] { display: none; }
 @media (max-width: 640px) { .cookie-bar .btn { width: 100%; text-align: center; } }
 
+/* ---------- полярная звезда ---------- */
+.star-wrap {
+  position: fixed; left: 40pt; top: 90px; z-index: 5; pointer-events: none;
+}
+@media (max-width: 1239px) {
+  /* на узких экранах звезда меньше — умещается в боковом поле 24px и не наезжает на текст */
+  .star-wrap { left: 8px; top: 70px; }
+  .star { width: 6px; height: 6px; opacity: .9; }
+  .star::before { width: 2px; height: 18px; }
+  .star::after { width: 18px; height: 2px; }
+}
+.star {
+  position: relative; width: 10px; height: 10px; border-radius: 50%;
+  background: radial-gradient(circle, #FFFFFF 0%, #CDE4FF 45%, rgba(205, 228, 255, 0) 78%);
+  box-shadow: 0 0 18px 6px rgba(159, 197, 245, .40);
+  animation: star-pulse 3.2s ease-in-out infinite;
+}
+.star::before, .star::after {
+  content: ""; position: absolute; left: 50%; top: 50%; translate: -50% -50%; border-radius: 3px;
+}
+.star::before {
+  width: 2.5px; height: 50px;
+  background: linear-gradient(180deg, rgba(205, 228, 255, 0), #CDE4FF 32%, #CDE4FF 68%, rgba(205, 228, 255, 0));
+}
+.star::after {
+  width: 50px; height: 2.5px;
+  background: linear-gradient(90deg, rgba(205, 228, 255, 0), #CDE4FF 32%, #CDE4FF 68%, rgba(205, 228, 255, 0));
+}
+@keyframes star-pulse {
+  0%, 100% { opacity: .55; scale: .8; }
+  50% { opacity: 1; scale: 1.15; }
+}
+@media (prefers-reduced-motion: reduce) { .star { animation: none; } }
+
 /* ---------- booking calendar ---------- */
 .booking {
   margin: 32px auto 0; max-width: 760px; text-align: left;
@@ -278,6 +321,9 @@ footer a:hover { color: var(--accent-light); }
 .cal-note { font-size: 12.5px; color: var(--muted); flex: 1; min-width: 220px; }
 @media (max-width: 640px) { .booking { padding: 16px; } .cal-day { height: 34px; } }
 </style>
+
+<!-- Полярная звезда -->
+<div class="star-wrap" aria-hidden="true"><div class="star"></div></div>
 
 <header>
   <div class="wrap nav">
@@ -682,5 +728,23 @@ document.documentElement.lang = 'ru';
 
   render();
   updateSubmit();
+})();
+</script>
+
+<!-- Полярная звезда: спуск по мере прокрутки -->
+<script>
+(function () {
+  var star = document.querySelector('.star-wrap');
+  if (!star) return;
+  function place() {
+    var narrow = window.matchMedia('(max-width: 1239px)').matches;
+    var top = narrow ? 70 : 90, gap = narrow ? 130 : 170; // старт и отступ снизу
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? (window.scrollY || document.documentElement.scrollTop) / max : 0;
+    star.style.top = (top + p * (window.innerHeight - top - gap)) + 'px';
+  }
+  window.addEventListener('scroll', function () { requestAnimationFrame(place); }, { passive: true });
+  window.addEventListener('resize', place);
+  place();
 })();
 </script>
