@@ -1,0 +1,685 @@
+<title>Лилия Розуменко — коучинг и консультации</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Лилия Розуменко — бизнес-тренер, консультант по личностному росту и бизнесу. Онлайн-консультации, коучинг, разборы: реализация, самооценка, отношения. Запись на сайте.">
+<meta property="og:title" content="Лилия Розуменко — бизнес-тренер, консультант по личностному росту и бизнесу">
+<meta property="og:description" content="От понимания себя — к решениям, действиям и результату. Онлайн-консультации, групповой коучинг, личное сопровождение.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="Foto/favi.png">
+<link rel="apple-touch-icon" href="Foto/favi.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg: #0F1F4D;
+  --panel: #1B3775;
+  --panel-soft: rgba(27, 55, 117, .55);
+  --accent: #7FB2F0;
+  --accent-light: #9CC5F5;
+  --text: #F2F6FD;
+  --muted: #9FB2DC;
+}
+
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Nunito Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3, .serif { font-family: "Playfair Display", serif; font-weight: 500; }
+h2 { font-size: clamp(26px, 4vw, 38px); line-height: 1.2; text-wrap: balance; }
+h2 em { font-style: italic; color: var(--accent-light); }
+
+.eyebrow {
+  font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--accent); font-weight: 800; margin-bottom: 14px;
+}
+.section { padding: 84px 0; }
+.section.tight { padding: 48px 0; }
+.tight .section-head { margin-bottom: 28px; }
+.tight .section-head p { margin-top: 10px; }
+.section-head { max-width: 640px; margin-bottom: 44px; }
+.section-head p { color: var(--muted); margin-top: 14px; }
+
+.btn {
+  display: inline-block; background: var(--accent); color: #0F1F4D;
+  font-weight: 800; font-size: 14px; padding: 15px 34px; border-radius: 6px;
+  box-shadow: 0 8px 28px rgba(127, 178, 240, .30);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(127, 178, 240, .40); }
+.btn.ghost {
+  background: transparent; color: var(--text);
+  border: 1px solid rgba(156, 197, 245, .45); box-shadow: none;
+}
+.btn.ghost:hover { border-color: var(--accent); color: var(--accent-light); }
+.btn.disabled { opacity: .45; pointer-events: none; box-shadow: none; }
+
+/* ---------- header ---------- */
+header {
+  position: relative; z-index: 10;
+  background: transparent;
+}
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.brand-name { font-family: "Playfair Display", serif; font-size: 17px; font-weight: 600; }
+.brand-name span { display: block; font-family: "Nunito Sans", sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+.menu { display: flex; gap: 30px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.menu a:hover { color: var(--accent-light); }
+@media (max-width: 860px) { .menu { display: none; } }
+
+/* ---------- hero ---------- */
+.hero {
+  min-height: 640px;
+  display: flex; align-items: flex-end;
+  position: relative;
+  margin-top: -72px; /* фон hero заходит под прозрачный хедер */
+  padding: 202px 0 64px;
+  background: url('Foto/lilia hero.png') right center / cover no-repeat;
+}
+.hero::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 150px;
+  background: linear-gradient(180deg, rgba(15, 31, 77, .92), rgba(15, 31, 77, 0));
+  pointer-events: none;
+}
+@media (max-width: 860px) {
+  .hero { background-position: 72% center; }
+}
+.hero-text { max-width: 55%; padding-left: 22pt; position: relative; z-index: 1; }
+@media (max-width: 860px) { .hero-text { max-width: 100%; padding: 0 24px; } }
+.hero h1 { font-size: clamp(32px, 5.2vw, 52px); line-height: 1.16; margin-bottom: 18px; }
+.hero h1 em { font-style: italic; color: var(--accent-light); }
+.hero .sub { color: var(--muted); font-size: 17px; max-width: 480px; margin-bottom: 30px; }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 38px; }
+.hero-stats { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-stats div {
+  background: var(--panel-soft); border: 1px solid rgba(127, 178, 240, .22);
+  border-radius: 10px; padding: 13px 18px; flex: 1; min-width: 140px;
+  font-size: 12px; color: var(--muted);
+}
+.hero-stats b { display: block; font-family: "Playfair Display", serif; font-size: 19px; font-weight: 600; color: var(--text); margin-top: 3px; font-variant-numeric: tabular-nums; }
+
+/* ---------- about ---------- */
+.about { background: #12265C; border-top: 1px solid rgba(127, 178, 240, .12); border-bottom: 1px solid rgba(127, 178, 240, .12); }
+.about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: stretch; }
+@media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } }
+.about-photo { display: flex; }
+.about-photo img { border-radius: 14px; border: 1px solid rgba(127, 178, 240, .25); width: 100%; height: 100%; min-height: 100%; object-fit: cover; }
+.about-text { display: flex; flex-direction: column; justify-content: center; }
+.about-text p { color: var(--muted); margin-bottom: 16px; text-align: justify; hyphens: auto; }
+.about-text p strong { color: var(--text); }
+.about-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 30px; }
+@media (max-width: 640px) { .about-facts { grid-template-columns: 1fr; } }
+.about-facts div {
+  background: var(--panel-soft); border: 1px solid rgba(127, 178, 240, .22);
+  border-radius: 10px; padding: 16px 18px; font-size: 13px; color: var(--muted);
+}
+.about-facts b { display: block; font-family: "Playfair Display", serif; font-size: 17px; color: var(--text); margin-bottom: 4px; font-weight: 600; }
+
+/* ---------- method (матрица судьбы) ---------- */
+.method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+@media (max-width: 860px) { .method-grid { grid-template-columns: 1fr; gap: 36px; } }
+.method-cards { display: grid; gap: 16px; }
+.method-card {
+  background: var(--panel-soft); border: 1px solid rgba(127, 178, 240, .22);
+  border-radius: 12px; padding: 22px 24px; display: flex; gap: 18px; align-items: flex-start;
+}
+.method-card .n {
+  font-family: "Playfair Display", serif; font-size: 22px; font-style: italic;
+  color: var(--accent); flex: none; line-height: 1.2;
+}
+.method-card b { display: block; margin-bottom: 4px; font-size: 15.5px; }
+.method-card p { font-size: 13.5px; color: var(--muted); }
+
+/* ---------- services ---------- */
+.services { background: #12265C; border-top: 1px solid rgba(127, 178, 240, .12); border-bottom: 1px solid rgba(127, 178, 240, .12); padding: 48px 0; }
+.services .section-head { margin-bottom: 28px; }
+.services .section-head p { margin-top: 10px; }
+.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 760px) { .cards { grid-template-columns: 1fr; } }
+.card {
+  background: var(--panel-soft); border: 1px solid rgba(127, 178, 240, .22);
+  border-radius: 14px; padding: 22px 26px 20px; display: flex; flex-direction: column;
+  transition: border-color .15s ease;
+}
+.card:hover { border-color: rgba(127, 178, 240, .5); }
+.card .type { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 800; margin-bottom: 8px; }
+.card h3 { font-size: 20px; margin-bottom: 8px; }
+.card p { color: var(--muted); font-size: 13.5px; line-height: 1.55; margin-bottom: 14px; flex: 1; }
+.card .price { font-family: "Playfair Display", serif; font-size: 26px; font-weight: 600; margin-bottom: 2px; font-variant-numeric: tabular-nums; }
+.card .price-note { font-size: 12.5px; color: var(--muted); margin-bottom: 16px; }
+.card .btn { align-self: flex-start; font-size: 13px; padding: 11px 24px; }
+.card .pay-note { font-size: 11.5px; color: var(--muted); margin-top: 10px; opacity: .8; }
+
+/* ---------- how it works ---------- */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 960px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+.step {
+  border: 1px solid rgba(127, 178, 240, .22); border-radius: 12px; padding: 20px 22px;
+  background: rgba(27, 55, 117, .35);
+}
+.step .n {
+  font-family: "Playfair Display", serif; font-style: italic; font-size: 30px;
+  color: var(--accent); margin-bottom: 8px; line-height: 1;
+}
+.step b { display: block; margin-bottom: 5px; font-size: 15px; }
+.step p { font-size: 13.5px; color: var(--muted); }
+
+/* ---------- testimonials ---------- */
+.reviews { background: #12265C; border-top: 1px solid rgba(127, 178, 240, .12); border-bottom: 1px solid rgba(127, 178, 240, .12); }
+.review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 860px) { .review-grid { grid-template-columns: 1fr; } }
+.review {
+  background: var(--panel-soft); border: 1px solid rgba(127, 178, 240, .22);
+  border-radius: 12px; padding: 20px 22px 18px;
+}
+.review p { font-size: 14px; line-height: 1.55; margin-bottom: 12px; }
+.review .who { display: flex; align-items: center; gap: 12px; }
+.review .ava {
+  width: 40px; height: 40px; border-radius: 50%; flex: none;
+  background: var(--panel); border: 1px solid rgba(127, 178, 240, .35);
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Playfair Display", serif; font-style: italic; color: var(--accent); font-size: 15px;
+}
+.review .who b { display: block; font-size: 14px; }
+.review .who span { font-size: 12px; color: var(--muted); }
+
+/* ---------- faq ---------- */
+.faq { max-width: 720px; }
+.qa { border-bottom: 1px solid rgba(127, 178, 240, .18); padding: 20px 0; }
+.qa summary { cursor: pointer; font-weight: 700; font-size: 16px; list-style: none; position: relative; padding-right: 36px; }
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::after {
+  content: "+"; position: absolute; right: 0; top: -2px;
+  font-family: "Playfair Display", serif; font-size: 22px; color: var(--accent);
+}
+.qa[open] summary::after { content: "–"; }
+.qa p { color: var(--muted); font-size: 14.5px; margin-top: 12px; max-width: 620px; }
+
+/* ---------- final cta ---------- */
+.final {
+  background: #12265C; border-top: 1px solid rgba(127, 178, 240, .12);
+  padding: 52px 0 56px; text-align: center;
+  background-image: radial-gradient(520px 300px at 50% -10%, rgba(64, 110, 200, .35), transparent 70%);
+}
+.final h2 { max-width: 640px; margin: 0 auto 12px; }
+.final p { color: var(--muted); max-width: 480px; margin: 0 auto 20px; }
+.final .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- footer ---------- */
+footer { padding: 56px 0 40px; border-top: 1px solid rgba(127, 178, 240, .14); }
+.foot-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+@media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr; } }
+footer h4 { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 800; margin-bottom: 14px; }
+footer p, footer a { font-size: 14px; color: var(--muted); display: block; margin-bottom: 8px; }
+footer a:hover { color: var(--accent-light); }
+.foot-bottom { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; border-top: 1px solid rgba(127, 178, 240, .14); padding-top: 24px; font-size: 12.5px; color: var(--muted); }
+
+/* ---------- cookie bar ---------- */
+.cookie-bar {
+  position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 50;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  background: #1B3775; border: 1px solid rgba(127, 178, 240, .35); border-radius: 12px;
+  padding: 14px 18px; box-shadow: 0 12px 34px rgba(0, 0, 0, .35); max-width: 1120px; margin: 0 auto;
+}
+.cookie-bar p { font-size: 13px; color: var(--muted); flex: 1; min-width: 240px; margin: 0; }
+.cookie-bar a { color: var(--accent-light); text-decoration: underline; }
+.cookie-bar .btn { font-size: 12.5px; padding: 9px 20px; }
+.cookie-bar[hidden] { display: none; }
+@media (max-width: 640px) { .cookie-bar .btn { width: 100%; text-align: center; } }
+
+/* ---------- booking calendar ---------- */
+.booking {
+  margin: 32px auto 0; max-width: 760px; text-align: left;
+  background: var(--panel-soft); border: 1px solid rgba(127, 178, 240, .22);
+  border-radius: 14px; padding: 20px 24px;
+}
+.booking h3 { font-size: 19px; margin-bottom: 8px; }
+.booking .cal-sub { color: var(--muted); font-size: 13px; margin: 0 0 8px; max-width: none; }
+.cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.cal-month { font-family: "Playfair Display", serif; font-size: 16px; }
+.cal-nav { display: flex; gap: 8px; }
+.cal-nav button {
+  width: 30px; height: 30px; border-radius: 8px; cursor: pointer;
+  background: transparent; color: var(--accent-light);
+  border: 1px solid rgba(127, 178, 240, .35); font-size: 15px; font-family: inherit;
+}
+.cal-nav button:hover { border-color: var(--accent); }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-grid .dow { font-size: 11px; letter-spacing: .06em; color: var(--muted); text-align: center; padding: 2px 0; }
+.cal-day {
+  height: 36px; border-radius: 8px; cursor: pointer; font-size: 13px;
+  background: transparent; color: var(--text); border: 1px solid transparent; font-family: inherit;
+}
+.cal-day:hover:not(:disabled):not(.selected) { border-color: rgba(127, 178, 240, .5); }
+.cal-day:disabled { opacity: .22; cursor: default; }
+.cal-day.today { border-color: rgba(127, 178, 240, .4); }
+.cal-day.selected { background: var(--accent); color: #0F1F4D; font-weight: 800; border-color: var(--accent); }
+.cal-times { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.cal-times .lbl { width: 100%; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 800; margin-bottom: 2px; }
+.time-btn {
+  padding: 7px 14px; border-radius: 8px; cursor: pointer; font-size: 13px; font-family: inherit;
+  background: transparent; color: var(--text); border: 1px solid rgba(127, 178, 240, .35);
+}
+.time-btn:hover { border-color: var(--accent); }
+.time-btn.selected { background: var(--accent); color: #0F1F4D; font-weight: 800; border-color: var(--accent); }
+.cal-cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+.cal-cta .btn { font-size: 13px; padding: 12px 26px; }
+.cal-note { font-size: 12.5px; color: var(--muted); flex: 1; min-width: 220px; }
+@media (max-width: 640px) { .booking { padding: 16px; } .cal-day { height: 34px; } }
+</style>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <img src="Foto/Logo.png" alt="Логотип LR">
+      <div class="brand-name">Лилия Розуменко<span>Коучинг · Личностный рост</span></div>
+    </div>
+    <nav class="menu">
+      <a href="#about">Обо мне</a>
+      <a href="#method">Метод</a>
+      <a href="#services">Услуги</a>
+      <a href="#reviews">Отзывы</a>
+    </nav>
+    <a class="btn" style="font-size:13px; padding:11px 24px;" href="#zapis">Записаться</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div>
+      <div class="eyebrow">Бизнес-тренер · Консультант по личностному росту и бизнесу</div>
+      <h1>От понимания себя — к <em>решениям, действиям и результату</em></h1>
+      <p class="sub">Помогаю увидеть сильные стороны, убрать внутренние ограничения и выстроить путь к личным и профессиональным целям — на консультациях, в коучинге и сопровождении.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#zapis">Записаться на консультацию</a>
+        <a class="btn ghost" href="#services">Форматы и цены</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>1 000+</b>клиентов за время практики</div>
+        <div><b>Основные темы</b>реализация · самооценка · отношения</div>
+        <div><b>Онлайн</b>занятия и консультации из любой точки мира</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about section" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo"><img src="Foto/foto hero.jpeg" alt="Лилия Розуменко"></div>
+    <div class="about-text">
+      <div class="eyebrow">Обо мне</div>
+      <h2>Я — Лилия Розуменко — <em>бизнес-тренер</em>, консультант по личностному росту и бизнесу, предприниматель</h2>
+      <p style="margin-top:18px;">Помогаю пройти путь от понимания себя к осознанным решениям и конкретным результатам — с любой стартовой точки: с вопроса «чего я хочу», отложенного решения или цели, к которой пока не видно пути.</p>
+      <p>За плечами — юридическое образование с красным дипломом, руководство отделом в промышленном строительстве и собственный бизнес по франшизе «Гемотест» с 2011 года. Бизнес я знаю изнутри: ресурсы, ограничения, люди и ответственность за решения.</p>
+      <p>Три года обучения: психология, коучинг, консалтинг, HR, mini-MBA, магистратура по бизнес-психологии. Отдельное направление — Сюцай: четыре ступени в Syucai Training Institute.</p>
+      <p>Работаю на стыке психологии, коучинга и бизнес-практики — более 1000 консультаций. Помогаю отделять факты от интерпретаций, видеть зону влияния и принимать решения, которые воплощаются в действия.</p>
+      <p>Я не про волшебные обещания — я за трезвый взгляд, честность с собой и конкретные шаги.</p>
+      <div class="about-facts">
+        <div><b>15 лет</b>предпринимательского опыта</div>
+        <div><b>Институт STI</b>Syucai Training Institute, Сюцай · 4 ступени</div>
+        <div><b>Живой формат</b>онлайн-тренинги, разборы, практика</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="section" id="method">
+  <div class="wrap method-grid">
+    <div>
+      <div class="eyebrow">Метод</div>
+      <h2>Матрица судьбы — <em>карта</em>, с которой работать быстрее</h2>
+      <p style="color:var(--muted); margin-top:16px;">Матрица судьбы — мой фирменный инструмент. Она показывает сильные стороны, повторяющиеся сценарии и точки роста — не по ощущениям, а по конкретной структуре. На её основе мы строим план: что усиливать, что отпускать и куда двигаться дальше.</p>
+      <p style="color:var(--muted); margin-top:14px;">Работаю с тремя главными темами: <strong style="color:var(--text);">реализация, самооценка и отношения</strong>.</p>
+    </div>
+    <div class="method-cards">
+      <div class="method-card">
+        <span class="n">1</span>
+        <div><b>Диагностика</b><p>Смотрим вашу матрицу: предназначение, ресурсы, ограничения. Уже на первой встрече становится ясно, где вы «упираетесь».</p></div>
+      </div>
+      <div class="method-card">
+        <span class="n">2</span>
+        <div><b>Разбор сценариев</b><p>Находим повторяющиеся ситуации — в деньгах, отношениях, карьере — и понимаем, что их запускает.</p></div>
+      </div>
+      <div class="method-card">
+        <span class="n">3</span>
+        <div><b>План и действия</b><p>Формируем конкретные шаги и держим фокус: коучинг — это про результат, а не только про понимание.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Форматы работы</div>
+      <h2>Выберите <em>свой формат</em></h2>
+      <p>От точечного разбора одного вопроса до месячного личного сопровождения.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="type">Быстрый разбор</div>
+        <h3>Экспресс-консультация</h3>
+        <p>30 минут по видеосвязи, чтобы разобрать один конкретный запрос: решение, выбор, ситуация «здесь и сейчас». Без погружения в историю — сразу к сути.</p>
+        <div class="price">6 000 ₽</div>
+        <div class="price-note">30 минут · один запрос</div>
+        <!-- ЗАМЕНИТЬ href на платёжную ссылку ЮKassa (экспресс-консультация 6 000 ₽) -->
+        <a class="btn" href="https://t.me/Liliyarozumenko_bot" target="_blank" rel="noopener">Оплатить</a>
+      </div>
+      <div class="card">
+        <div class="type">Глубокая работа</div>
+        <h3>Индивидуальная консультация</h3>
+        <p>2 часа глубокого разбора: матрица судьбы, ваши сценарии и сильные стороны, ответы на главные вопросы. С конкретными выводами и планом после встречи.</p>
+        <div class="price">15 000 ₽</div>
+        <div class="price-note">2 часа · глубокий разбор</div>
+        <!-- ЗАМЕНИТЬ href на платёжную ссылку ЮKassa (индивидуальная консультация 15 000 ₽) -->
+        <a class="btn" href="https://t.me/Liliyarozumenko_bot" target="_blank" rel="noopener">Оплатить</a>
+      </div>
+      <div class="card">
+        <div class="type">Групповая программа</div>
+        <h3>Групповой коучинг личностного роста и бизнеса</h3>
+        <p>Месяц работы в группе из 10–15 человек: занятия, практика, поддержка и обратная связь. Энергия группы плюс личный разбор — хороший баланс цены и глубины.</p>
+        <div class="price">60 000 ₽</div>
+        <div class="price-note">группа 10–15 человек · 1 месяц</div>
+        <!-- ЗАМЕНИТЬ href на платёжную ссылку ЮKassa (групповой коучинг 60 000 ₽, доступна рассрочка) -->
+        <a class="btn" href="https://t.me/Liliyarozumenko_bot" target="_blank" rel="noopener">Занять место</a>
+        <div class="pay-note">Доступна рассрочка платежа</div>
+      </div>
+      <div class="card">
+        <div class="type">Максимальный результат</div>
+        <h3>Личное сопровождение</h3>
+        <p>Индивидуальный коучинг и менторство на месяц: тесная работа со мной один на один. Для тех, кто хочет серьёзных сдвигов — в карьере, бизнесе, самооценке — с полным погружением.</p>
+        <div class="price">123 000 ₽</div>
+        <div class="price-note">индивидуально · 1 месяц</div>
+        <!-- ЗАМЕНИТЬ href на платёжную ссылку ЮKassa (сопровождение 123 000 ₽, доступна рассрочка) -->
+        <a class="btn" href="https://t.me/Liliyarozumenko_bot" target="_blank" rel="noopener">Занять место</a>
+        <div class="pay-note">Доступна рассрочка платежа</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Как начать</div>
+      <h2>Четыре шага до <em>первой встречи</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <b>Заявка в Telegram</b>
+        <p>Нажимаете кнопку «Записаться» — откроется бот. Выбираете формат и удобное время.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <b>Оплата и подтверждение</b>
+        <p>Оплата картой онлайн. Слот закрепляется за вами, приходят детали подключения.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <b>Встреча</b>
+        <p>Консультация онлайн по видеосвязи. После — резюме и понятный план действий.</p>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <b>Дальше — результат</b>
+        <p>При необходимости продолжаем: серия консультаций, группа или личное сопровождение.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews section tight" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Отзывы</div>
+      <h2>Что говорят <em>клиенты</em></h2>
+    </div>
+    <div class="review-grid">
+      <div class="review">
+        <p>«Я до сих пор под впечатлением! У Лилии невероятная энергия, и она умеет объяснять всё настолько понятно и глубоко, что у меня словно случилось настоящее озарение — пришло очень много важных осознаний и инсайтов.»</p>
+        <div class="who"><div class="ava">Д</div><div><b>Дарья</b></div></div>
+      </div>
+      <div class="review">
+        <p>«Лилия, ещё раз хочу вас поблагодарить за разбор. Сказать, что я в шоке, — ничего не сказать, до сих пор под впечатлением. Вытащили все скелеты и то, о чём я не хотела признаться даже самой себе. Уже сделала первую практику — чувствую, как приходит осознание и принятие.»</p>
+        <div class="who"><div class="ava">С</div><div><b>Саша</b></div></div>
+      </div>
+      <div class="review">
+        <p>«Благодарю Лилию за нереально крутой разбор. Всё понятно и доступно — теперь я знаю, куда мне двигаться и над чем упорно работать. В который раз убеждаюсь: случайности не случайны. Это подарок судьбы! Очень рада знакомству.»</p>
+        <div class="who"><div class="ava">М</div><div><b>Марина</b></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Вопросы</div>
+      <h2>Частые <em>вопросы</em></h2>
+    </div>
+    <div class="faq">
+      <details class="qa" open>
+        <summary>Как проходит консультация?</summary>
+        <p>Онлайн, по видеосвязи. Мы разбираем ваш запрос, при необходимости — матрицу судьбы, и заканчиваем конкретными решениями и шагами. После встречи вы получаете краткое резюме.</p>
+      </details>
+      <details class="qa">
+        <summary>Что такое матрица судьбы и обязательно ли её разбирать?</summary>
+        <p>Матрица судьбы — инструмент диагностики, который показывает сильные стороны, сценарии и точки роста. Использую её, когда это ускоряет работу. Если тема не требует — работаем чисто в коучинговом формате.</p>
+      </details>
+      <details class="qa">
+        <summary>Можно ли оплатить частями?</summary>
+        <p>Да. Для группового коучинга и личного сопровождения доступна рассрочка платежа. Экспресс- и индивидуальную консультации оплачиваются полностью при записи.</p>
+      </details>
+      <details class="qa">
+        <summary>Что если после записи время не подходит?</summary>
+        <p>Напишите в Telegram-боте — перенесём встречу на другой слот. Подробные условия переноса и возврата — в оферте.</p>
+      </details>
+      <details class="qa">
+        <summary>С чего лучше начать, если сомневаюсь в формате?</summary>
+        <p>С экспресс-консультации: за 30 минут разберём один запрос, и вы почувствуете, как работаю. Дальше выберем более глубокий формат, если он нужен.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="zapis">
+  <div class="wrap">
+    <div class="eyebrow">Запись</div>
+    <h2>Начните с одной встречи — <em>остальное сложится</em></h2>
+    <p>Нажмите кнопку — откроется Telegram-бот, выберите удобный формат и время. Отвечаю лично.</p>
+    <div class="btn-row">
+      <a class="btn" href="https://t.me/Liliyarozumenko_bot" target="_blank" rel="noopener">Записаться через Telegram</a>
+      <a class="btn ghost" href="#services">Посмотреть форматы и цены</a>
+    </div>
+
+    <!-- Календарь онлайн-записи -->
+    <div class="booking">
+      <h3>Или выберите время в календаре</h3>
+      <p class="cal-sub">Отметьте дату и время — заявка уйдёт на почту, я подтвержу слот и пришлю детали подключения.</p>
+      <div class="cal-head">
+        <div class="cal-month" id="calMonth"></div>
+        <div class="cal-nav">
+          <button type="button" id="calPrev" aria-label="Предыдущий месяц">‹</button>
+          <button type="button" id="calNext" aria-label="Следующий месяц">›</button>
+        </div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-times" id="calTimes">
+        <span class="lbl">Свободное время (МСК)</span>
+        <button type="button" class="time-btn">10:00</button>
+        <button type="button" class="time-btn">12:00</button>
+        <button type="button" class="time-btn">14:00</button>
+        <button type="button" class="time-btn">16:00</button>
+        <button type="button" class="time-btn">18:00</button>
+        <button type="button" class="time-btn">19:00</button>
+      </div>
+      <div class="cal-cta">
+        <a class="btn" id="calSubmit" href="#">Записаться на выбранное время</a>
+        <p class="cal-note" id="calHint">Выберите дату и время — кнопка отправит заявку на почту <strong style="color:var(--text);">rozumenko1981@icloud.com</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Лилия Розуменко</h4>
+        <p>Бизнес-тренер · консультант по личностному росту и бизнесу. Коучинг и консультации: реализация, самооценка, отношения.</p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="tel:+79039708454">8 903 970 84 54</a>
+        <a href="mailto:rozumenko1981@icloud.com">rozumenko1981@icloud.com</a>
+        <a href="https://t.me/Liliyarozumenko_bot" target="_blank" rel="noopener">Telegram-бот для записи</a>
+        <a href="https://instagram.com/liliya__rozumenko" target="_blank" rel="noopener">Instagram · liliya__rozumenko</a>
+      </div>
+      <div>
+        <h4>Документы</h4>
+        <a href="2026-09-26-lilia-oferta.html">Публичная оферта</a>
+        <a href="2026-09-26-lilia-policy-pd.html">Политика конфиденциальности</a>
+        <a href="2026-09-26-lilia-consent-pd.html">Согласие на обработку персональных данных</a>
+        <a href="2026-09-26-lilia-cookie-policy.html">Политика использования cookie</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>ИП Розуменко Л.В. · ИНН 502242453906 · ОГРНИП 321508100546589</span>
+      <span>Оплата картой через ЮKassa</span>
+    </div>
+    <p style="font-size:11.5px; color:var(--muted); opacity:.65; margin-top:14px;">Instagram принадлежит компании Meta Platforms Inc., деятельность которой признана экстремистской и запрещена на территории Российской Федерации.</p>
+  </div>
+</footer>
+
+<!-- Cookie bar -->
+<div class="cookie-bar" id="cookieBar" hidden>
+  <p>Мы используем файлы cookie для корректной работы сайта и обезличенной статистики. Продолжая пользоваться сайтом, вы соглашаетесь с этим — подробности в <a href="2026-09-26-lilia-cookie-policy.html">политике cookie</a>.</p>
+  <button type="button" class="btn" id="cookieOk">Хорошо</button>
+</div>
+
+<script>
+document.documentElement.lang = 'ru';
+(function () {
+  var bar = document.getElementById('cookieBar');
+  var ok = document.getElementById('cookieOk');
+  try {
+    if (!localStorage.getItem('cookie-ok')) bar.hidden = false;
+    ok.addEventListener('click', function () {
+      try { localStorage.setItem('cookie-ok', '1'); } catch (e) {}
+      bar.hidden = true;
+    });
+  } catch (e) { bar.hidden = true; }
+})();
+</script>
+
+<script>
+(function () {
+  var MONTHS = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+  var DOW = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+  var grid = document.getElementById('calGrid');
+  var monthEl = document.getElementById('calMonth');
+  var prevBtn = document.getElementById('calPrev');
+  var nextBtn = document.getElementById('calNext');
+  var timesBox = document.getElementById('calTimes');
+  var submit = document.getElementById('calSubmit');
+  var hint = document.getElementById('calHint');
+  var EMAIL = 'rozumenko1981@icloud.com';
+
+  var today = new Date(); today.setHours(0,0,0,0);
+  var view = new Date(today.getFullYear(), today.getMonth(), 1);
+  var pickedDate = null, pickedTime = null;
+
+  function fmtDate(d) {
+    return d.getDate() + ' ' + MONTHS[d.getMonth()].toLowerCase() + ' ' + d.getFullYear();
+  }
+
+  function updateSubmit() {
+    if (pickedDate && pickedTime) {
+      var subj = 'Запись на консультацию — ' + fmtDate(pickedDate) + ', ' + pickedTime;
+      var body = 'Здравствуйте!\n\nХочу записаться на консультацию.\nДата: ' + fmtDate(pickedDate) +
+        '\nВремя: ' + pickedTime + ' (МСК)\nФормат: экспресс-консультация / индивидуальная консультация / другое (напишите нужный)\n\nИмя: \nТелефон или Telegram: \nКоротко о запросе: ';
+      submit.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+      submit.textContent = 'Записаться: ' + fmtDate(pickedDate) + ', ' + pickedTime;
+      submit.classList.remove('disabled');
+      hint.textContent = 'Заявка уйдёт на почту — откроется письмо с уже заполненными датой и временем.';
+    } else {
+      submit.removeAttribute('href');
+      submit.classList.add('disabled');
+      submit.textContent = 'Выберите дату и время';
+      hint.innerHTML = 'Кнопка станет активной после выбора даты и времени. Заявка уйдёт на почту <strong style="color:var(--text);">rozumenko1981@icloud.com</strong>.';
+    }
+  }
+
+  function render() {
+    var y = view.getFullYear(), m = view.getMonth();
+    monthEl.textContent = MONTHS[m] + ' ' + y;
+    grid.innerHTML = '';
+    DOW.forEach(function (d) {
+      var c = document.createElement('div'); c.className = 'dow'; c.textContent = d; grid.appendChild(c);
+    });
+    var first = new Date(y, m, 1);
+    var start = (first.getDay() + 6) % 7; // понедельник = 0
+    var days = new Date(y, m + 1, 0).getDate();
+    for (var i = 0; i < start; i++) { grid.appendChild(document.createElement('div')); }
+    for (var d = 1; d <= days; d++) {
+      var date = new Date(y, m, d);
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'cal-day'; b.textContent = d;
+      var dow = (date.getDay() + 6) % 7;
+      var past = date < today, weekend = dow >= 5;
+      if (past || weekend) b.disabled = true;
+      if (date.getTime() === today.getTime()) b.classList.add('today');
+      if (pickedDate && date.getTime() === pickedDate.getTime()) b.classList.add('selected');
+      b.addEventListener('click', function (btn, dt) {
+        return function () {
+          pickedDate = dt;
+          var old = grid.querySelector('.cal-day.selected');
+          if (old) old.classList.remove('selected');
+          btn.classList.add('selected');
+          updateSubmit();
+        };
+      }(b, date));
+      grid.appendChild(b);
+    }
+  }
+
+  prevBtn.addEventListener('click', function () {
+    view = new Date(view.getFullYear(), view.getMonth() - 1, 1); render();
+  });
+  nextBtn.addEventListener('click', function () {
+    view = new Date(view.getFullYear(), view.getMonth() + 1, 1); render();
+  });
+
+  Array.prototype.forEach.call(timesBox.querySelectorAll('.time-btn'), function (btn) {
+    btn.addEventListener('click', function () {
+      var old = timesBox.querySelector('.time-btn.selected');
+      if (old) old.classList.remove('selected');
+      btn.classList.add('selected');
+      pickedTime = btn.textContent;
+      updateSubmit();
+    });
+  });
+
+  render();
+  updateSubmit();
+})();
+</script>
